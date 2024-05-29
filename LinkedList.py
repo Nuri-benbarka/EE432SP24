@@ -7,11 +7,35 @@ class node:
 class LinkedList:
     def __init__(self):
         self.head = None
+        self.tail = None
 
-    def insert(self, data):
+    def insert(self, data, index=0):
         new_node = node(data)
-        new_node.next = self.head
-        self.head = new_node
+        current_node = self.head
+        if current_node is None:
+            self.head = new_node
+            self.tail = new_node
+        elif index == 0:
+            new_node.next = self.head
+            self.head = new_node
+        else:
+            i = 0
+            while i < index - 1 and current_node.next is not None:
+                current_node = current_node.next
+                i += 1
+            new_node.next = current_node.next  # 4 -> 5
+            current_node.next = new_node  # 3 -> 4
+        if current_node == self.tail:
+            self.tail = new_node
+
+    def append(self, data):
+        newNode = node(data)
+        if self.head is not None:
+            self.tail.next = newNode
+            self.tail = newNode
+        else:
+            self.head = newNode
+            self.tail = newNode
 
     def search(self, data):
         current_node = self.head
@@ -47,6 +71,10 @@ my_list.insert("My")
 my_list.insert("name")
 my_list.insert("is")
 my_list.insert("Nuri")
+print(my_list.tail.data)
+my_list.insert(5, 0)
+print(my_list.tail.data)
 print(my_list)
 print(my_list.search(5))
 print(my_list.search("is"))
+
