@@ -48,52 +48,53 @@ class StackLL:
 class StackArr:
     def __init__(self, capasity):
         self.items = [None for _ in range(capasity)]
-        self.top = -1
+        self._top = -1
 
     def push(self, data):
-        if self.top == len(self.items)-1:
+        if self._top == len(self.items)-1:
             print("Stack overflow")
         else:
-            self.top += 1
-            self.items[self.top] = data
+            self._top += 1
+            self.items[self._top] = data
 
     def pop(self):
-        if self.top == -1:
+        if self._top == -1:
             return  "Stack underflow"
         else:
-            data = self.items[self.top]
-            self.top -= 1
+            data = self.items[self._top]
+            self._top -= 1
             return data
 
     def __len__(self):
-        return self.top + 1
+        return self._top + 1
 
     def top(self):
-        return self.items[self.top]
+        return self.items[self._top]
 
 
-mystack1 = StackLL()
-mystack1.push(10)
-mystack1.push(20)
-mystack1.push(30)
-print(len(mystack1))
-print(mystack1.pop())
-print(mystack1.pop())
-print(mystack1.pop())
-print(mystack1.pop())
-print(len(mystack1))
-print(mystack1)
+if __name__ == "__main__":
+    mystack1 = StackLL()
+    mystack1.push(10)
+    mystack1.push(20)
+    mystack1.push(30)
+    print(len(mystack1))
+    print(mystack1.pop())
+    print(mystack1.pop())
+    print(mystack1.pop())
+    print(mystack1.pop())
+    print(len(mystack1))
+    print(mystack1)
 
-print(" ")
-print("stack array")
-mystack = StackArr(2)
-mystack.push(10)
-mystack.push(20)
-mystack.push(30)
-print(len(mystack))
-print(mystack.pop())
-print(mystack.pop())
-print(mystack.pop())
-print(mystack.pop())
-print(len(mystack))
-print(mystack)
+    print(" ")
+    print("stack array")
+    mystack = StackArr(2)
+    mystack.push(10)
+    mystack.push(20)
+    mystack.push(30)
+    print(len(mystack))
+    print(mystack.pop())
+    print(mystack.pop())
+    print(mystack.pop())
+    print(mystack.pop())
+    print(len(mystack))
+    print(mystack)
