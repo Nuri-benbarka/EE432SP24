@@ -57,24 +57,24 @@ class LinkedList:
             current_node = current_node.next
         return result
 
-
-my_node1 = node("My")
-my_node2 = node("name")
-my_node3 = node(5)
-my_node1.next = my_node2
-my_node2.next = my_node3
-print(my_node1.next)
-print(my_node2)
-print(my_node1.next.next.data)
-my_list = LinkedList()
-my_list.insert("My")
-my_list.insert("name")
-my_list.insert("is")
-my_list.insert("Nuri")
-print(my_list.tail.data)
-my_list.insert(5, 0)
-print(my_list.tail.data)
-print(my_list)
-print(my_list.search(5))
-print(my_list.search("is"))
+if __name__ ==  "__main__":
+    my_node1 = node("My")
+    my_node2 = node("name")
+    my_node3 = node(5)
+    my_node1.next = my_node2
+    my_node2.next = my_node3
+    print(my_node1.next)
+    print(my_node2)
+    print(my_node1.next.next.data)
+    my_list = LinkedList()
+    my_list.insert("My")
+    my_list.insert("name")
+    my_list.insert("is")
+    my_list.insert("Nuri")
+    print(my_list.tail.data)
+    my_list.insert(5, 0)
+    print(my_list.tail.data)
+    print(my_list)
+    print(my_list.search(5))
+    print(my_list.search("is"))
 
