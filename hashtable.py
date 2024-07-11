@@ -11,7 +11,7 @@ class Node:
         while current_node.next is not None:
             rslt += " --> "
             current_node = current_node.next
-            rslt += f" ({current_node.key},{current_node.value}) "
+            rslt += f" ({current_node.value},{current_node.value}) "
         return rslt
 
 
@@ -84,7 +84,7 @@ class HashTable:
             self.num_of_items -= 1
             return True
         while head.next is not None:
-            if head.next.key == key:
+            if head.next.value == key:
                 head.next = head.next.next
                 self.num_of_items -= 1
                 return True
