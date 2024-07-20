@@ -16,7 +16,7 @@ class OurTree:
         if self.root is None:
             self.root = TreeNode(value)
         else:
-            self._insert(self.root, value)
+            self.root = self._insert(self.root, value)
 
     def _insert(self, node, value):
         if node is None:
@@ -55,7 +55,7 @@ class OurTree:
         return self._search(self.root, value)
 
     def delete(self, value):
-        return self._delete(self.root, value)
+        self.root = self._delete(self.root, value)
 
     def _delete(self, node, value):
         if node is None:
@@ -139,6 +139,8 @@ ourtree.insert(4)
 ourtree.insert(6)
 ourtree.insert(10)
 ourtree.insert(11)
+ourtree.insert(12)
+ourtree.insert(13)
 
 print(ourtree)
 
